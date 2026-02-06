@@ -41,7 +41,8 @@ export default function Home() {
     <div className="container">
       <section>
         <div>
-          <p>♡ Will you be my Valentine? ♡</p>
+          <p>♡ Will you be my Valentine kajal? ♡</p>
+          <p>♡ I am you Jitesh {Your one and only boyfriend}? ♡</p>
         </div>
         <div className="img-container">
           {image ? (
