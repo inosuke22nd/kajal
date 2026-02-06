@@ -27,45 +27,69 @@ export default function Home() {
       "You're breaking my heart 💔",
       "Pwetty please 🥺👉👈",
       "Can't catch up? 😂"
-    ]
+    ];
 
     const randomIndex = Math.floor(Math.random() * phrases.length);
     setResponse(phrases[randomIndex]);
-  }
+  };
 
   const handleYesBtn = () => {
     setImage(!image);
-  }
+  };
 
   return (
     <div className="container">
       <section>
         <div>
-          <p>♡ Will you be my Valentine kajal? ♡</p>
-          <p1>♡ I am you Jitesh {Your one and only boyfriend}? ♡</p1>
+          <p>♡ Will you be my Valentine Kajal? ♡</p>
+          <p>♡ I am your Jitesh (your one and only boyfriend) ♡</p>
         </div>
+
         <div className="img-container">
           {image ? (
-            <Image src="/heppi.gif" alt="cat spinning with sparkles" width={270} height={200} className="cat" />
-
+            <Image
+              src="/heppi.gif"
+              alt="cat spinning with sparkles"
+              width={270}
+              height={200}
+              className="cat"
+            />
           ) : (
-            <Image src="/please.gif" alt="two animals asking each other to be their valentine gif" width={340} height={200} priority />
+            <Image
+              src="/please.gif"
+              alt="asking to be valentine"
+              width={340}
+              height={200}
+              priority
+            />
           )}
         </div>
+
         <div className="button-section">
-          <Link href='/success'>
+          <Link href="/success">
             <button
               className="yes-button button-base button-green"
-              onMouseOver={handleYesBtn} onMouseOut={handleYesBtn}
+              onMouseOver={handleYesBtn}
+              onMouseOut={handleYesBtn}
             >
-              Yes
+              Yes 💖
             </button>
           </Link>
-          <button className='no-button button-base button-red' style={coord ? { position: 'absolute', top: coord.x, right: coord.y } : undefined}
-            onClick={handleNoBtn} onMouseOver={handleNoBtn}
-          >{response}</button>
+
+          <button
+            className="no-button button-base button-red"
+            style={
+              coord
+                ? { position: 'absolute', top: coord.y, left: coord.x }
+                : undefined
+            }
+            onClick={handleNoBtn}
+            onMouseOver={handleNoBtn}
+          >
+            {response}
+          </button>
         </div>
       </section>
-    </div >
+    </div>
   );
 }
